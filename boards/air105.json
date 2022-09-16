@@ -1,0 +1,18 @@
+{
+    "name": "LuatOS AIR105",
+    "url": "https://github.com",
+    "vendor": "Luat",
+    "frameworks": [ "baremetal", "arduino" ],
+
+    "build": {
+      "core"      : "MH1903",
+      "variant"   : "air105",
+      "mcu"       : "MH1903"
+    },
+
+    "upload": {
+      "maximum_ram_size" :  262144,
+      "maximum_size"     : 2097152,
+      "protocol"         : "uf2"
+    }
+  }

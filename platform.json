@@ -1,0 +1,47 @@
+{
+    "name": "air105",
+    "title": "LuatOS Air105 (MH1903)",
+    "description": "TODO",
+    "homepage": "https://wiki.luatos.com/develop/compile/Air105.html",
+    "license": "Apache-2.0",
+    "keywords": [
+        "keyword_1",
+        "keyword_N"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/platformio/platform-myplatform.git"
+    },
+    "version": "0.0.0",
+    "frameworks": {
+        "baremetal": {
+            "package": "framework-megahunt",
+            "script": "builder/frameworks/baremetal.py"
+          }
+    },
+    "packages": {
+        "toolchain-gccarmnoneeabi": {
+            "type": "toolchain",
+            "owner": "platformio",
+            "version": ">=1.40803.0,<1.40805.0"
+        },
+        "framework-megahunt": {
+            "type": "framework",
+            "owner": "platformio"
+        },
+        "framework-cmsis": {
+            "type": "framework",
+            "optional": true,
+            "owner": "platformio",
+            "version": "~2.50501.0",
+            "optionalVersions": [
+                "~2.50700.0"
+            ]
+        },
+        "tool-direct-vcs-url": {
+            "type": "uploader",
+            "optional": true,
+            "version": "https://github.com/user/repo.git"
+        }
+    }
+}
