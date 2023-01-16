@@ -1,7 +1,3 @@
-# WizIO 2021 Georgi Angelov
-#   http://www.wizio.eu/
-#   https://github.com/Wiz-IO/wizio-pico
-
 from platformio.managers.platform import PlatformBase
 import os, platform, copy
 from os.path import join
@@ -32,13 +28,13 @@ class Air105Platform(PlatformBase):
     def _add_dynamic_options(self, board):
         # upload protocols
         if not board.get("upload.protocols", []):
-            board.manifest["upload"]["protocols"] = ["uf2"]
+            board.manifest["upload"]["protocols"] = ["mhboot"]
         if not board.get("upload.protocol", ""):
-            board.manifest["upload"]["protocol"] = "uf2"
+            board.manifest["upload"]["protocol"] = "mhboot"
         # debug tools
         debug = board.manifest.get("debug", {})
-        non_debug_protocols   = [ "uf2" ]
-        supported_debug_tools = [ "cmsis-dap", "picoprobe", ]
+        non_debug_protocols   = [ "mhboot" ]
+        supported_debug_tools = [ ]
         upload_protocol  = board.manifest.get("upload", {}).get("protocol")
         upload_protocols = board.manifest.get("upload", {}).get("protocols", [])
         if debug:

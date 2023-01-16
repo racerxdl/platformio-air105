@@ -38,10 +38,10 @@
                 "~2.50700.0"
             ]
         },
-        "tool-direct-vcs-url": {
+        "air105-uploader": {
             "type": "uploader",
             "optional": true,
-            "version": "https://github.com/user/repo.git"
+            "version": "https://github.com/racerxdl/air105-uploader.git"
         }
     }
 }
