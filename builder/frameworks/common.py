@@ -136,7 +136,6 @@ def dev_compiler(env, application_name = 'APPLICATION'):
         CFLAGS = [
             cortex,
             "-std=c99",
-            "-Wno-discarded-qualifiers",
             "-Wno-ignored-qualifiers",
             "-Wno-attributes", #
         ],
