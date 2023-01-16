@@ -28,6 +28,7 @@ def ini_file(env):
     f = open(ini, "a+")
     if 'monitor_port'  not in txt: f.write("\n;monitor_port = SERIAL_PORT\n")
     if 'monitor_speed' not in txt: f.write(";monitor_speed = 115200\n")
+    if 'monitor_rts'   not in txt: f.write("monitor_rts = 0 ; AIR105 board has inverted RTS\n")
     if 'build_flags'   not in txt: f.write("\n;build_flags = \n")
     if 'lib_deps'      not in txt: f.write("\n;lib_deps = \n")
     f.close()
@@ -117,7 +118,6 @@ def dev_compiler(env, application_name = 'APPLICATION'):
         CCFLAGS = [
             cortex,
             optimization,
-            "-std=c99",
             "-fdata-sections",
             "-ffunction-sections",
             "-Wall",
@@ -135,6 +135,7 @@ def dev_compiler(env, application_name = 'APPLICATION'):
         ],
         CFLAGS = [
             cortex,
+            "-std=c99",
             "-Wno-discarded-qualifiers",
             "-Wno-ignored-qualifiers",
             "-Wno-attributes", #
