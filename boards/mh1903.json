@@ -1,18 +1,18 @@
 {
-    "name": "LuatOS AIR105",
+    "name": "MH1903",
     "url": "https://github.com",
-    "vendor": "Luat",
+    "vendor": "Megahunt",
     "frameworks": [ "baremetal", "arduino" ],
 
     "build": {
       "core"      : "MH1903",
-      "variant"   : "air105",
+      "variant"   : "mh1903",
       "mcu"       : "MH1903"
     },
 
     "upload": {
-      "maximum_ram_size" :  655360,
-      "maximum_size"     : 4194304,
+      "maximum_ram_size" : 1048576,
+      "maximum_size"     : 1048576,
       "protocol"         : "mhboot"
     }
   }
