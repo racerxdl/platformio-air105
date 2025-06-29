@@ -179,11 +179,12 @@ def add_libraries(env):
         env.Append( CPPDEFINES = [ "DAP" ], )
 
 def add_binary_type(env):
+    variant = env.BoardConfig().get("build.variant", "air105")
     binary_type = env.BoardConfig().get("build.binary_type", 'default')
     env.address = env.BoardConfig().get("build.address", "empty")
     linker      = env.BoardConfig().get("build.linker", "empty")
     env.address = '0x10001000'
-    linker = 'mh1903.ld'
+    linker = f'{variant}.ld'
     env.Append( LDSCRIPT_PATH = join(env.framework_dir, "ldscripts", linker) )
     binary_type_info.append(linker)
     binary_type_info.append(env.address)
