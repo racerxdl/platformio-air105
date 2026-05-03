@@ -85,8 +85,7 @@ def dev_compiler(env, application_name = 'APPLICATION'):
         PROGSUFFIX=".elf",
         PROGNAME = application_name
     )
-    # "-mfloat-abi=hard"
-    cortex = ["-mcpu=cortex-m4","-mfpu=fpv4-sp-d16","-mfloat-abi=softfp","-mthumb"]
+    cortex = ["-mcpu=cortex-m3","-mthumb","-mfloat-abi=soft"]
     env.heap_size = env.BoardConfig().get("build.heap", "2048")
     optimization = env.BoardConfig().get("build.optimization", "-Os")
     stack_size = env.BoardConfig().get("build.stack", "2048")
