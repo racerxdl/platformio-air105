@@ -2,7 +2,7 @@
     "name": "LuatOS AIR105",
     "url": "https://github.com",
     "vendor": "Luat",
-    "frameworks": [ "baremetal", "arduino" ],
+    "frameworks": [ "baremetal" ],
 
     "build": {
       "core"      : "MH1903",

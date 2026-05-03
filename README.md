@@ -1,5 +1,15 @@
 # platformio-air105
-AIR105 MH1903 for Platform.io (WIP)
 
+PlatformIO platform for Megahunt MH190X (Air105) Cortex-M4 SoC.
 
-This a REALLY horrible "gambiarra" (a.k.a. alternate technical resource) for making possible to build code for MH1903 using platform.io. Most of the stuff here is from LuatOS AIR105.
+## Quick Start
+
+1. Install [PlatformIO](https://platformio.org/)
+2. Create a project with `board = air105` or `board = mh1903`
+3. Build: `pio run`
+4. Upload: `pio run -t upload`
+
+## Requirements
+
+- `arm-none-eabi-gcc` toolchain (installed automatically by PlatformIO)
+- `python3` with `pycryptodome` (for mhboot upload protocol)

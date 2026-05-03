@@ -4,12 +4,12 @@
 """
 
 from os.path import join
-from SCons.Script import AlwaysBuild, Builder, Default, DefaultEnvironment
+from SCons.Script import AlwaysBuild, COMMAND_LINE_TARGETS, Builder, Default, DefaultEnvironment
 
 env = DefaultEnvironment()
 platform = env.PioPlatform()
 
-print( '<<<<<<<<<<<< ' + env.BoardConfig().get("name").upper() + " 2022 Lucas Teske >>>>>>>>>>>>" )
+print( '<<<<<<<<<<<< ' + env.BoardConfig().get("name").upper() + " >>>>>>>>>>>>" )
 
 target_elf = env.BuildProgram()
 target_bin = env.ElfToBin(join("$BUILD_DIR", "firmware"), target_elf)
@@ -29,7 +29,7 @@ if upload_protocol == "mhboot":
             "upload.py"),
         UPLOADCMD='"$PYTHONEXE" "$UPLOADER" "$UPLOAD_PORT" $SOURCE'
     )
-    env.Execute("$PYTHONEXE -m pip install pycryptodome")
+    env.Execute("$PYTHONEXE -m pip install --quiet pycryptodome 2>/dev/null || true")
     if set(["uploadfs", "uploadfsota"]) & set(COMMAND_LINE_TARGETS):
         env.Append(UPLOADERFLAGS=["--spiffs"])
     upload_actions = [env.VerboseAction("$UPLOADCMD", "Uploading $SOURCE")]

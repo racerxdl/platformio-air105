@@ -111,7 +111,7 @@ def dev_compiler(env, application_name = 'APPLICATION'):
         CPPDEFINES = [
             "NDEBUG",
             "CORTEX_M4",
-            "__AIR105_BSP__",
+            "__MH190X__",
             "CMB_CPU_PLATFORM_TYPE=CMB_CPU_ARM_CORTEX_M4",
             "HSE_VALUE=12000000"
         ],
@@ -175,15 +175,13 @@ def add_libraries(env):
         if "USE_FREERTOS" not in env.get("CPPDEFINES"):
             env.Append(  CPPDEFINES = [ "USE_FREERTOS"] )
 
-    if "cmsis-dap" in env.GetProjectOption("lib_deps", []):
-        env.Append( CPPDEFINES = [ "DAP" ], )
+    
 
 def add_binary_type(env):
     variant = env.BoardConfig().get("build.variant", "air105")
     binary_type = env.BoardConfig().get("build.binary_type", 'default')
-    env.address = env.BoardConfig().get("build.address", "empty")
+    env.address = env.BoardConfig().get("build.address", '0x10001000')
     linker      = env.BoardConfig().get("build.linker", "empty")
-    env.address = '0x10001000'
     linker = f'{variant}.ld'
     env.Append( LDSCRIPT_PATH = join(env.framework_dir, "ldscripts", linker) )
     binary_type_info.append(linker)
@@ -192,7 +190,6 @@ def add_binary_type(env):
     add_libraries(env)
 
 def dev_finalize(env):
-    env.BuildSources( join("$BUILD_DIR", env.platform, "mh1903"), join(env.framework_dir, "mh1903") )
     add_binary_type(env)
     add_sdk(env)
     env.Append(LIBS = env.libs)

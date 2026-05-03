@@ -2,7 +2,7 @@
     "name": "MH1903",
     "url": "https://github.com",
     "vendor": "Megahunt",
-    "frameworks": [ "baremetal", "arduino" ],
+    "frameworks": [ "baremetal" ],
 
     "build": {
       "core"      : "MH1903",

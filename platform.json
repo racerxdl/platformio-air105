@@ -1,7 +1,7 @@
 {
     "name": "air105",
     "title": "LuatOS Air105 (MH1903)",
-    "description": "TODO",
+    "description": "PlatformIO support for Megahunt MH190X (Air105) Cortex-M4 SoC",
     "homepage": "https://wiki.luatos.com/develop/compile/Air105.html",
     "license": "Apache-2.0",
     "keywords": [
@@ -17,7 +17,7 @@
         "type": "git",
         "url": "https://github.com/racerxdl/platformio-air105"
     },
-    "version": "0.0.0",
+    "version": "1.0.0",
     "frameworks": {
         "baremetal": {
             "package": "framework-megahunt",
