@@ -17,7 +17,7 @@
         "type": "git",
         "url": "https://github.com/racerxdl/platformio-air105"
     },
-    "version": "1.0.0",
+    "version": "1.1.0",
     "frameworks": {
         "baremetal": {
             "package": "framework-megahunt",
